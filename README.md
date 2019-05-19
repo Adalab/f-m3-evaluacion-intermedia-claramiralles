@@ -1,3 +1,8 @@
+This is our first React exercise, as part of the intermediate evaluation of Module 3: React, in Adalab (www.adalab.es). 
+The exercise consists of showing a list of Pokemon in cards, based on an array of data. 
+For this purpose we use ES6, Props and PropTypes. 
+May you want to initialize it, please follow the React instructions below:
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
