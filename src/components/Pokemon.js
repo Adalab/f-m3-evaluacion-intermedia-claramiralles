@@ -41,7 +41,7 @@ Pokemon.propTypes = {
   types: PropTypes.arrayOf(PropTypes.string),
   url: PropTypes.string,
   action: PropTypes.func,
-  favstate: PropTypes.string,
+  favstate: PropTypes.number,
 };
 
 export default Pokemon;
