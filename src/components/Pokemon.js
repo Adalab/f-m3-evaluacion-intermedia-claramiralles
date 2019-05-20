@@ -5,7 +5,7 @@ import "./Pokemon.scss";
 class Pokemon extends Component {
   render() {
     const { id, name, types, url, action, favstate } = this.props;
-    const clickedFav = favstate ? 'button--fav' : 'button'
+    const clickedFav = `button ${parseInt(favstate) === parseInt(id) ?'button--fav':''}`
 
     return (
       <div className="card">
@@ -41,7 +41,7 @@ Pokemon.propTypes = {
   types: PropTypes.arrayOf(PropTypes.string),
   url: PropTypes.string,
   action: PropTypes.func,
-  favstate: PropTypes.bool,
+  favstate: PropTypes.string,
 };
 
 export default Pokemon;

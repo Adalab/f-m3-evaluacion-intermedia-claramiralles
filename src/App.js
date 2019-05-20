@@ -10,7 +10,7 @@ class App extends Component {
 
     this.state = {
       data: data,
-      fav: false,
+      fav: 0,
     };
 
     this.handlerFavorite = this.handlerFavorite.bind(this);
@@ -18,12 +18,21 @@ class App extends Component {
 
   
  handlerFavorite(event){
-    this.setState((prevState, props) => {
+
+  const newFav = event.currentTarget.getAttribute('data-id');
+
+    this.setState((prevState => {
+    if (newFav === prevState.fav) {
       return {
-        fav: prevState.fav ? false : true,
-      };
-    });
-  }
+        fav: null
+      }
+    } else {
+      return {
+        fav: newFav
+      }
+    }
+  }));
+}
 
 
   render() {

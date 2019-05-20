@@ -30,7 +30,7 @@ class Pokelist extends Component {
 Pokelist.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
   action: PropTypes.func,
-  favstate: PropTypes.bool,
+  favstate: PropTypes.string,
 };
 
 export default Pokelist;
