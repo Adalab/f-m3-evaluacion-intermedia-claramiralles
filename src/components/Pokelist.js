@@ -5,17 +5,19 @@ import "./Pokelist.scss";
 
 class Pokelist extends Component {
   render() {
-    const { data } = this.props;
+    const { data, favstate, action } = this.props;
     return (
       <ul className="pokemon__list">
         {data.map(item => {
           return (
-            <li className="pokemon__item">
+            <li key={item.id} className="pokemon__item">
               <Pokemon
                 id={item.id}
                 name={item.name}
                 types={item.types}
                 url={item.url}
+                action={action}
+                favstate={favstate}
               />
             </li>
           );
@@ -26,7 +28,9 @@ class Pokelist extends Component {
 }
 
 Pokelist.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object)
+  data: PropTypes.arrayOf(PropTypes.object),
+  action: PropTypes.func,
+  favstate: PropTypes.number,
 };
 
 export default Pokelist;

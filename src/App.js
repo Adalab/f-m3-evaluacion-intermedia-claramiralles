@@ -9,15 +9,40 @@ class App extends Component {
     super(props);
 
     this.state = {
-      data: data
+      data: data,
+      fav: parseInt(0),
     };
+
+    this.handlerFavorite = this.handlerFavorite.bind(this);
   }
+
+  
+ handlerFavorite(event){
+
+  const newFav = parseInt(event.currentTarget.getAttribute('data-id'));
+
+    this.setState((prevState => {
+    if (newFav === prevState.fav) {
+      return {
+        fav: null
+      }
+    } else {
+      return {
+        fav: newFav
+      }
+    }
+  }));
+}
+
 
   render() {
     return (
       <div className="App">
         <Title />
-        <Pokelist data={this.state.data} />
+        <Pokelist 
+        data={this.state.data} 
+        action={this.handlerFavorite} 
+        favstate={this.state.fav}/>
       </div>
     );
   }
