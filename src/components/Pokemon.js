@@ -11,7 +11,7 @@ class Pokemon extends Component {
       <div className="card">
         <h2 className="card__title">{name}</h2>
         <img className="card__image" src={url} alt={name} />
-        <ol key={id}>
+        <ol className="card__footer" key={id}>
           {types.map((type, number) => {
             return (
               <p className="card--type" key={number}>
@@ -27,8 +27,7 @@ class Pokemon extends Component {
           data-id={id}
           onClick={action}
           favstate={favstate}
-        >
-          Love it!
+        >Fav!
         </button>
       </div>
     );
